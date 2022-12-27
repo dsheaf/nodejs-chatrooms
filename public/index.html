@@ -7,14 +7,97 @@
 	<title>Chat</title>
 	<script defer src="/socket.io/socket.io.js"></script>
 	<script defer src="script.js"></script>
-	<style></style>
+	<style>
+	#chat {
+		width: calc(100vw - 16em);
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: fixed;
+	}
+	#compose {
+		border-top: 1px solid black;
+		padding: 0.5em;
+		background: lightblue;
+	}
+	#message {
+		width: calc(100% - 5em);
+		padding: 0;
+		margin: 0;
+		border: 1px solid black;
+		background: white;
+	}
+	#send {
+		width: 4em;
+		float: right;
+		border: 1px solid black;
+		background: white;
+	}
+	#send:active {
+		background: lightgray;
+	}
+	#sidebar {
+		position: fixed;
+		right: 0;
+		width: 16em;
+		bottom: 0;
+		top: 0;
+		background: lightblue;
+		border-left: 1px solid black;
+	}
+	#new-chat {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		width: 16em;
+	}
+	#new-chat-form {
+		padding: 0.5em;
+	}	
+	#chat-name {
+		padding: 0;
+		margin: 0;
+		border: 1px solid black;
+		background: white;
+		width: calc(100% - 5em);
+	}
+	#create-chat {
+		width: 4em;
+		background: white;
+		float: right;
+		border: 1px solid black;
+	}
+	#new-chat-form label {
+
+	}
+	#users {
+		width: 100%;
+		padding: 0.5em;
+	}
+	</style>
 </head>
 <body>
-	<div id="messages" />
+<div id="chat">
+	<div id="messages"></div>
 	<form id="compose">
 		<input type="text" id="message">
 		<button type="submit" id="send">Send</button>
 	</form>
+</div>
+<div id="sidebar">
+	<div id="users">
+	<div>User1</div>
+	<div>User 2</div>
+	</div>
+	<div id="new-chat">
+	<form id="new-chat-form">
+		<label><b>Join Chat</b></label>
+		<input type="text" id="chat-name">
+		<button type="submit" id="create-chat">Join</button>
+	</form>
+	</div>
+</div>
+</div>
 </body>
 </html>
 
